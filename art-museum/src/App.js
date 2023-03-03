@@ -1,4 +1,3 @@
-import React from 'react';
 import harvardArt from './data/harvardArt.js'
 import GalleryNavigation from './components/GalleryNavigation'
 import HomePage from './components/HomePage/HomePage';
@@ -19,7 +18,7 @@ function App() {
           </Route>
 
           <Route> 
-            404:Unknown Route
+            <h1>404:Unknown Route</h1>
           </Route>
 
       </Switch>

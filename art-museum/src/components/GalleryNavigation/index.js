@@ -1,4 +1,4 @@
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route, Switch } from 'react-router-dom'
 import GalleryView from '../GalleryView'
 import './GalleryNavigation.css';
 
@@ -6,12 +6,6 @@ function GalleryNavigation(props) {
 
   const { galleries } = props
   console.log(galleries);
-
-  // const galleryList = galleries.map(gallery => (
-  //   <li key={gallery.id} to={`/${gallery.url}`}>{gallery.name}</li>
-  // ));
-
-
 
 
   return (
@@ -24,12 +18,18 @@ function GalleryNavigation(props) {
     </li>))
     }
     
+    <Switch>
+      <Route path="/" exact></Route>
 
       <Route path="/galleries/:galleryId">
         <nav>
           <GalleryView galleries={galleries}/>
         </nav>
       </Route>
+
+    </Switch>
+
+
     </div>
   );
 }
