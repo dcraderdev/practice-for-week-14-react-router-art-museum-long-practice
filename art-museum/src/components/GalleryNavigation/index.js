@@ -17,6 +17,7 @@ function GalleryNavigation(props) {
   return (
     <div>
 
+      <h2>Gallery Navigation</h2>
       {  galleries.map(gallery => (
     <li key={gallery.id}>
       <NavLink activeClassName='active'  to={`/galleries/${gallery.id}`}>{gallery.name}</NavLink>
@@ -26,7 +27,6 @@ function GalleryNavigation(props) {
 
       <Route path="/galleries/:galleryId">
         <nav>
-          <h2>Gallery Navigation</h2>
           <GalleryView galleries={galleries}/>
         </nav>
       </Route>
