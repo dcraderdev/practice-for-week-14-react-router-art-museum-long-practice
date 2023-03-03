@@ -20,14 +20,13 @@ function GalleryView(props) {
         {gallery.theme}
       </h1>
       <h2>
+        this
+        <NavLink to='/'></NavLink> 
         <ArtImageTile art={gallery.objects} />
         {/* <img src='https://nrs.harvard.edu/urn-3:HUAM:CARP11440_dynmc'></img> */}
         
       </h2>
 
-      <h2>
-        <img src='https://nrs.harvard.edu/urn-3:HUAM:CARP11440_dynmc'></img> 
-      </h2>
 
     </div>
   );
