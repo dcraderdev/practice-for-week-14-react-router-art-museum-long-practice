@@ -5,7 +5,7 @@ import './GalleryNavigation.css';
 function GalleryNavigation(props) {
 
   const { galleries } = props
-  console.log(galleries);
+  // console.log(galleries);
 
 
   return (

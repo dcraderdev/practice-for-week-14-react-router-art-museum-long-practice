@@ -1,15 +1,17 @@
-import {NavLink, useParams} from 'react-router-dom'
+import {NavLink, useParams,Link} from 'react-router-dom'
 
-function ArtDescription({artWork}){
-  console.log(artWork);
+function ArtDescription({art}){
+  console.log('ArtDescription Component',art);
+  console.log('ArtDescription Component',art.creditline);
+
   return (
-    <h4>
-      {artWork.map(work=>{
-        <li>
-          
-        </li>
-      })}
-    </h4>
+
+    <div>
+art
+    </div>
+
+
+
   )
 }
 

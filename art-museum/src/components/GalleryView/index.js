@@ -1,35 +1,57 @@
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams,Route} from 'react-router-dom'
 import './GalleryView.css';
 import '../GalleryView'
 import ArtImageTile from '../ArtImageTile'
+import ArtDescription from '../ArtDescription';
 
-function GalleryView(props) {
-  const {galleries} = props
-  const {galleryId} = useParams()
-
+function GalleryView({galleries}) {
+  const {galleryId, artId} = useParams()
   const gallery = galleries.find(gallery=> gallery.id === +galleryId)
-  console.log(gallery.objects);
-  console.log(gallery.id);
+
+  const artWork = gallery.objects.find((art) => art.id === +artId)
+  
+  console.log(artWork);
+  // return (
+  //   <div >
+  //     <h1>{gallery.name}</h1>
+  //     <h1>{gallery.theme}</h1>
+
+  //     <h2>
+  //       <ArtImageTile art={gallery.objects} />
+  //     </h2>
+
+
+  //     <Route path="/galleries/:galleryId/art/:artId">
+  //       <ArtDescription
+  //         art={gallery.objects.find((art) => art.id === +artId)}
+  //       />
+  //     </Route>
+
+
+  //   </div>
+  // );
 
   return (
     <div >
-      <h1>
-        {gallery.name}
-      </h1>
-      <h1>
-        {gallery.theme}
-      </h1>
-      <h2>
-        this
-        <NavLink to='/'></NavLink> 
+      <h1>{gallery.name}</h1>
+      <h1>{gallery.theme}</h1>
+
+
+      <Route path="/galleries/:galleryId">
         <ArtImageTile art={gallery.objects} />
-        {/* <img src='https://nrs.harvard.edu/urn-3:HUAM:CARP11440_dynmc'></img> */}
-        
-      </h2>
+      </Route>
+
+
+      <Route path="/galleries/:galleryId/art/:artId">
+        <ArtDescription art={gallery.objects.find((art) => art.id === +artId)} />
+      </Route>
 
 
     </div>
   );
+
+
+
 }
 
 export default GalleryView;
